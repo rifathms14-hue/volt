@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* React Day Picker Styles */
+@layer base {
+  .rdp {
+    --rdp-cell-size: 40px;
+    --rdp-accent-color: #CFFF04;
+    --rdp-background-color: #FFFFFF;
+    --rdp-accent-color-dark: #09090B;
+    --rdp-background-color-dark: #FFFFFF;
+    --rdp-outline: 2px solid var(--rdp-accent-color);
+    --rdp-outline-selected: 3px solid var(--rdp-accent-color);
+    margin: 1em;
+  }
+
+  .rdp-button_reset {
+    appearance: none;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    cursor: default;
+    color: inherit;
+    border: none;
+    background-color: transparent;
+    font: inherit;
+  }
+
+  .rdp-button {
+    border: 2px solid transparent;
+  }
+
+  .rdp-button[disabled] {
+    opacity: 0.25;
+  }
+
+  .rdp-button:not([disabled]) {
+    cursor: pointer;
+  }
+
+  .rdp-day_selected,
+  .rdp-day_selected:focus-visible,
+  .rdp-day_selected:hover {
+    color: #09090B;
+    opacity: 1;
+    background-color: #CFFF04;
+  }
+}
+
+@layer base {
+  :root {
+    /* Pure White Background */
+    --background: 0 0% 100%;
+    /* Dark Text/Borders */
+    --foreground: 240 10% 3.9%;
+
+    /* CARD BACKGROUNDS */
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    /* THE ELECTRIC LIME GREEN (HSL: 73deg 100% 51%) */
+    --primary: 73 100% 51%;
+    /* Black text on top of Lime Green for contrast */
+    --primary-foreground: 240 5.9% 10%;
+
+    /* MUTED GRAYS for secondary elements */
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    /* DESTRUCTIVE (Red for rejects) */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* BORDERS & RINGS */
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    /* Use Lime Green for focus rings */
+    --ring: 73 100% 51%;
+    
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: var(--font-inter), system-ui, sans-serif;
+  }
+  
+  /* Apply Funnel Display to all headings and titles */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Funnel Display', system-ui, sans-serif;
+    font-weight: 700;
+  }
+}
+
